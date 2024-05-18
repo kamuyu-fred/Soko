@@ -6,6 +6,8 @@ public record class CustomerDetailsDto(
    string CustomerName,
    int CustomerPhone,
    string CustomerLocation
+   DateOnly CustomerAddedDate
+   
 
 
 

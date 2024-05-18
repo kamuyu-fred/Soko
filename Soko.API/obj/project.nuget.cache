@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nXixIEclQRP05RrV7LZYY4qjuW2coTl+LhnO9kO9cT7At8trgJp+Fr2PZnw+5GUTnRUsiTjDMJ82d8fk1CrMuQ==",
+  "dgSpecHash": "RrDldqmnjauQmRPxiJedPWVD1fyYTtx34a8FAWPPj9lMfnli5+jFKhXfU5/KmdZUFTd4Yeq6hqYIZOBfLkFHwA==",
   "success": true,
-  "projectFilePath": "/Users/fred/Development/dotnet/code/projects/Soko/Soko.API/Soko.API.csproj",
+  "projectFilePath": "/Users/fred/Development/dotnet/code/projects/SokoProject/Soko/Soko.API/Soko.API.csproj",
   "expectedPackageFiles": [
     "/Users/fred/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/fred/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
