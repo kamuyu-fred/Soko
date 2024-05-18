@@ -9,6 +9,10 @@ public class SokoContext(DbContextOptions<SokoContext> options)
 {
     public DbSet<Product> Products => Set<Product>();
 
+    public DbSet<Customer> Customers => Set<Customer>();
+
+    public DbSet<Vendor> Vendors => Set<Vendor>();
+
     public DbSet<Category> Categories => Set<Category>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Soko.API;
+namespace Soko.API.Dtos;
 
 public record class CreateVendorDto(
 

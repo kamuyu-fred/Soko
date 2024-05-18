@@ -1,4 +1,4 @@
-﻿namespace Soko.API;
+﻿namespace Soko.API.Dtos;
 
 public record class VendorDetailsDto(
 

@@ -1,11 +1,11 @@
-﻿namespace Soko.API;
+﻿namespace Soko.API.Dtos;
 
 public record class CustomerDetailsDto(
 
    int CustomerId,
    string CustomerName,
    int CustomerPhone,
-   string CustomerLocation
+   string CustomerLocation,
    DateOnly CustomerAddedDate
    
 

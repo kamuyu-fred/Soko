@@ -11,7 +11,7 @@ using Soko.API.Data;
 namespace Soko.API.Data.Migrations
 {
     [DbContext(typeof(SokoContext))]
-    [Migration("20240518030557_InitialCreate")]
+    [Migration("20240518054223_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -62,6 +62,31 @@ namespace Soko.API.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Soko.API.Entities.Customer", b =>
+                {
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateOnly>("CustomerAddedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CustomerLocation")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("CustomerPhone")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("CustomerId");
+
+                    b.ToTable("Customers");
+                });
+
             modelBuilder.Entity("Soko.API.Entities.Product", b =>
                 {
                     b.Property<int>("ProductId")
@@ -92,6 +117,31 @@ namespace Soko.API.Data.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Soko.API.Entities.Vendor", b =>
+                {
+                    b.Property<int>("VendorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateOnly>("VendorAddedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("VendorLocation")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("VendorName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("VendorPhone")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("VendorId");
+
+                    b.ToTable("Vendors");
                 });
 
             modelBuilder.Entity("Soko.API.Entities.Product", b =>

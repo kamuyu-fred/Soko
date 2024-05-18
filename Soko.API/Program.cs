@@ -11,6 +11,7 @@ var app = builder.Build();
 app.MapProductsEndpoints();
 app.MapCategoriesEndpoints();
 
+
 await app.MigrateDbAsync();
 
 app.Run();
