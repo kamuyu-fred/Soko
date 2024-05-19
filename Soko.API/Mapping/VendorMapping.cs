@@ -12,6 +12,7 @@ public static class VendorMapping
             VendorName = vendor.VendorName,
             VendorPhone = vendor.VendorPhone,
             VendorLocation = vendor.VendorLocation,
+            VendorAddedDate = vendor.VendorAddedDate
             
         };
     }
@@ -20,10 +21,11 @@ public static class VendorMapping
     {
         return new Vendor()
         {
-            VendorId = VendorId,
-           VendorName =vendor.VendorName,
+            VendorId =VendorId,
+            VendorName =vendor.VendorName,
             VendorPhone = vendor.VendorPhone,
-            VendorLocation = vendor.VendorLocation
+            VendorLocation = vendor.VendorLocation,
+            VendorAddedDate = vendor.VendorAddedDate
             
         };
     }    
@@ -34,10 +36,11 @@ public static class VendorMapping
     {
         return new(
 
-            
+            vendor.VendorId,
             vendor.VendorName,
             vendor.VendorPhone,
-            vendor.VendorLocation
+            vendor.VendorLocation,
+            vendor.VendorAddedDate
         );
     }    
 }

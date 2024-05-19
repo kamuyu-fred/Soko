@@ -2,8 +2,11 @@
 
 public record class VendorDetailsDto(
 
+    int VendorId,
     string VendorName,
-    int VendorPhone,
-    string VendorLocation
+    string VendorPhone,
+    string VendorLocation,
+    DateOnly VendorAddedDate
 
 );
+

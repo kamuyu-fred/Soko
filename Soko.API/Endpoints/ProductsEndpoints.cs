@@ -5,7 +5,7 @@ using Soko.API.Entities;
 using Soko.API.Mapping;
 using Microsoft.EntityFrameworkCore;
 
-namespace Soko.API.Data;
+namespace Soko.API.Endpoints;
 
 public static class ProductsEndpoints
 {
@@ -52,7 +52,7 @@ public static class ProductsEndpoints
         });
 
         // PUT /products
-        group.MapPut("/{ProductId}", async (int ProductId, UpdateProductDto updatedProduct, SokoContext dbContext) =>
+        group.MapPut("/{productId}", async (int ProductId, UpdateProductDto updatedProduct, SokoContext dbContext) =>
         {
             var existingProduct = await dbContext.Products.FindAsync(ProductId);
 

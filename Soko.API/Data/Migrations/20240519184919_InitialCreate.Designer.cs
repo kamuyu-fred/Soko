@@ -11,7 +11,7 @@ using Soko.API.Data;
 namespace Soko.API.Data.Migrations
 {
     [DbContext(typeof(SokoContext))]
-    [Migration("20240518054223_InitialCreate")]
+    [Migration("20240519184919_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -79,8 +79,9 @@ namespace Soko.API.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("CustomerPhone")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("CustomerPhone")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("CustomerId");
 
@@ -136,8 +137,9 @@ namespace Soko.API.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("VendorPhone")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("VendorPhone")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("VendorId");
 

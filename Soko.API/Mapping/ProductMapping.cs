@@ -13,7 +13,7 @@ public static class ProductMapping
             Quantity = product.Quantity,
             CategoryId = product.CategoryId,
             BuyPrice = product.BuyPrice,
-            SellPrice = product.BuyPrice,
+            SellPrice = product.SellPrice,
             AddedDate = product.AddedDate
         };
     }
@@ -24,8 +24,10 @@ public static class ProductMapping
         {
             ProductId = ProductId,
             ProductName = product.ProductName,
+            Quantity = product.Quantity,
             CategoryId = product.CategoryId,
             BuyPrice = product.BuyPrice,
+            SellPrice = product.SellPrice,
             AddedDate = product.AddedDate,
             
         };

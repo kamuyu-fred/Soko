@@ -33,7 +33,7 @@ namespace Soko.API.Data.Migrations
                     CustomerId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     CustomerName = table.Column<string>(type: "TEXT", nullable: false),
-                    CustomerPhone = table.Column<int>(type: "INTEGER", nullable: false),
+                    CustomerPhone = table.Column<string>(type: "TEXT", nullable: false),
                     CustomerLocation = table.Column<string>(type: "TEXT", nullable: false),
                     CustomerAddedDate = table.Column<DateOnly>(type: "TEXT", nullable: false)
                 },
@@ -49,7 +49,7 @@ namespace Soko.API.Data.Migrations
                     VendorId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     VendorName = table.Column<string>(type: "TEXT", nullable: false),
-                    VendorPhone = table.Column<int>(type: "INTEGER", nullable: false),
+                    VendorPhone = table.Column<string>(type: "TEXT", nullable: false),
                     VendorLocation = table.Column<string>(type: "TEXT", nullable: false),
                     VendorAddedDate = table.Column<DateOnly>(type: "TEXT", nullable: false)
                 },

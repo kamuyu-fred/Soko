@@ -6,7 +6,7 @@ public class Vendor
     public required string VendorName { get; set; }
 
 
-    public int VendorPhone{ get; set; }
+    public required string VendorPhone{ get; set; }
 
     public required string VendorLocation { get; set; }
 

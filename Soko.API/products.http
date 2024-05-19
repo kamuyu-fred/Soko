@@ -1,29 +1,33 @@
-GET http://localhost:5274/games
+GET http://localhost:5275/products
 
 ###
-GET http://localhost:5274/games/1
+GET http://localhost:5275/products/1
 
 ###
-POST http://localhost:5274/games
+POST http://localhost:5275/products
 Content-Type: application/json
 
 {
-    "name": "Final Fantasy XIV",
-    "genreId": 2,
-    "price": 59.99,
-    "releaseDate": "2010-09-30"
+    "ProductName": "Final Fantasy XIV",
+    "quantity": 2,
+    "CategoryID": 4,
+    "BuyPrice": 50.00,
+    "SellPrice": 60.00,
+    "AddedDate": "2024-02-20"
 }
 
 ###
-PUT http://localhost:5274/games/3
+PUT http://localhost:5275/products/4
 Content-Type: application/json
 
 {
-    "name": "Street Fighter II Turbo",
-    "genreId": 1,
-    "price": 19.99,
-    "releaseDate": "1991-02-01"
+    "ProductName": "Final Fantasy XIV",
+    "Quantity": 3,
+    "CategoryID": 4,
+    "BuyPrice": 50.00,
+    "SellPrice": 80.00,
+    "AddedDate": "2024-02-20"
 }
 
 ###
-DELETE http://localhost:5274/games/8
+DELETE http://localhost:5275/products/4

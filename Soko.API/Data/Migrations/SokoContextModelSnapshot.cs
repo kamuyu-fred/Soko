@@ -76,8 +76,9 @@ namespace Soko.API.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("CustomerPhone")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("CustomerPhone")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("CustomerId");
 
@@ -133,8 +134,9 @@ namespace Soko.API.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("VendorPhone")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("VendorPhone")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("VendorId");
 

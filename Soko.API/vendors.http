@@ -1,0 +1,32 @@
+GET http://localhost:5275/vendors
+
+###
+GET http://localhost:5275/vendors/1
+
+###
+POST http://localhost:5275/vendors
+Content-Type: application/json
+
+{
+    "VendorName": "Kevin Huria",
+    "VendorPhone": "254722555555",
+    "VendorLocation": "Nairobi",
+    "VendorAddedDate" : "2024-02-20"
+    
+}
+
+###
+PUT http://localhost:5275/vendors/1
+Content-Type: application/json
+
+{
+    
+    "VendorName": "Kevin G. Huria",
+    "VendorPhone": "0722555555",
+    "VendorLocation": "Kitale",
+    "VendorAddedDate" : "2024-02-20"
+    
+}
+
+###
+DELETE http://localhost:5275/vendors/1

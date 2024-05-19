@@ -1,0 +1,32 @@
+GET http://localhost:5275/customers
+
+###
+GET http://localhost:5275/customers/1
+
+###
+POST http://localhost:5275/customers
+Content-Type: application/json
+
+{
+    "CustomerName": "Kevin Huria",
+    "CustomerPhone": "254722555555",
+    "CustomerLocation": "Nairobi",
+    "CustomerAddedDate" : "2024-02-20"
+    
+}
+
+###
+PUT http://localhost:5275/customers/1
+Content-Type: application/json
+
+{
+    
+    "CustomerName": "Kevin G. Huria",
+    "CustomerPhone": "0722555555",
+    "CustomerLocation": "Kitale",
+    "CustomerAddedDate" : "2024-02-20"
+    
+}
+
+###
+DELETE http://localhost:5275/customers/1

@@ -4,7 +4,7 @@ public record class CustomerDetailsDto(
 
    int CustomerId,
    string CustomerName,
-   int CustomerPhone,
+   string CustomerPhone,
    string CustomerLocation,
    DateOnly CustomerAddedDate
    
