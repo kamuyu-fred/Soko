@@ -2632,11 +2632,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/fred/Development/dotnet/code/projects/SokoProject/Soko/Soko.API/Soko.API.csproj",
+      "projectUniqueName": "/Users/fred/Development/dotnet/code/projects/SokoRebuild/Soko/Soko.API/Soko.API.csproj",
       "projectName": "Soko.API",
-      "projectPath": "/Users/fred/Development/dotnet/code/projects/SokoProject/Soko/Soko.API/Soko.API.csproj",
+      "projectPath": "/Users/fred/Development/dotnet/code/projects/SokoRebuild/Soko/Soko.API/Soko.API.csproj",
       "packagesPath": "/Users/fred/.nuget/packages/",
-      "outputPath": "/Users/fred/Development/dotnet/code/projects/SokoProject/Soko/Soko.API/obj/",
+      "outputPath": "/Users/fred/Development/dotnet/code/projects/SokoRebuild/Soko/Soko.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/fred/.nuget/NuGet/NuGet.Config"

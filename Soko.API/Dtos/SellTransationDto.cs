@@ -6,12 +6,12 @@ namespace Soko.API.Dtos;
 public record class SellTransactionDto(
 
    int SellTransactionId,
-   string CustomerName,
-   int Quantity,
-   int ProductId,
-   string ProductName,
-   decimal SellPrice,
-   decimal SellTotal,
+   string TCustomerName,
+   int TQuantity,
+   int TProductId,
+   string TProductName,
+   decimal TSellPrice,
+   decimal TSellTotal,
    DateTime SellTransactionDate
 
 );
