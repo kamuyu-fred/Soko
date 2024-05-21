@@ -15,6 +15,12 @@ public class SokoContext(DbContextOptions<SokoContext> options)
 
     public DbSet<Category> Categories => Set<Category>();
 
+    public DbSet<BuyTransaction> BuyTransactions => Set<BuyTransaction>();
+
+    public DbSet<SellTransaction> SellTransactions => Set<SellTransaction>();
+
+
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>().HasData(

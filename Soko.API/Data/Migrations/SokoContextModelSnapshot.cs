@@ -17,6 +17,37 @@ namespace Soko.API.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.5");
 
+            modelBuilder.Entity("Soko.API.Entities.BuyTransaction", b =>
+                {
+                    b.Property<int>("BTId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("BuyTransactionDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("TBuyPrice")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("TProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TProductName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("TQuantity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TVendorName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("BTId");
+
+                    b.ToTable("BuyTransactions");
+                });
+
             modelBuilder.Entity("Soko.API.Entities.Category", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -117,6 +148,38 @@ namespace Soko.API.Data.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("Soko.API.Entities.SellTransaction", b =>
+                {
+                    b.Property<int>("STId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("SellTransactionDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("TProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TProductName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("TQuantity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("TSellPrice")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("STId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("SellTransactions");
+                });
+
             modelBuilder.Entity("Soko.API.Entities.Vendor", b =>
                 {
                     b.Property<int>("VendorId")
@@ -150,6 +213,15 @@ namespace Soko.API.Data.Migrations
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Soko.API.Entities.SellTransaction", b =>
+                {
+                    b.HasOne("Soko.API.Entities.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
                 });

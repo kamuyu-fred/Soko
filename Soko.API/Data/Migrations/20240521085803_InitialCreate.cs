@@ -14,6 +14,24 @@ namespace Soko.API.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "BuyTransactions",
+                columns: table => new
+                {
+                    BTId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    TVendorName = table.Column<string>(type: "TEXT", nullable: false),
+                    TQuantity = table.Column<int>(type: "INTEGER", nullable: false),
+                    TProductId = table.Column<int>(type: "INTEGER", nullable: false),
+                    TProductName = table.Column<string>(type: "TEXT", nullable: false),
+                    TBuyPrice = table.Column<decimal>(type: "TEXT", nullable: false),
+                    BuyTransactionDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BuyTransactions", x => x.BTId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Categories",
                 columns: table => new
                 {
@@ -82,6 +100,29 @@ namespace Soko.API.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "SellTransactions",
+                columns: table => new
+                {
+                    STId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    TProductId = table.Column<int>(type: "INTEGER", nullable: false),
+                    TQuantity = table.Column<int>(type: "INTEGER", nullable: false),
+                    TProductName = table.Column<string>(type: "TEXT", nullable: false),
+                    CategoryId = table.Column<int>(type: "INTEGER", nullable: true),
+                    TSellPrice = table.Column<decimal>(type: "TEXT", nullable: false),
+                    SellTransactionDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SellTransactions", x => x.STId);
+                    table.ForeignKey(
+                        name: "FK_SellTransactions_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "CategoryId");
+                });
+
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "CategoryId", "CategoryName" },
@@ -98,16 +139,27 @@ namespace Soko.API.Data.Migrations
                 name: "IX_Products_CategoryId",
                 table: "Products",
                 column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SellTransactions_CategoryId",
+                table: "SellTransactions",
+                column: "CategoryId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "BuyTransactions");
+
+            migrationBuilder.DropTable(
                 name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "SellTransactions");
 
             migrationBuilder.DropTable(
                 name: "Vendors");

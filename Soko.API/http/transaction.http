@@ -1,0 +1,24 @@
+GET http://localhost:5275/buytransactions
+
+###
+GET http://localhost:5275/transactions/1
+
+###
+POST http://localhost:5275/buytransactions
+Content-Type: application/json
+
+{
+    "TVendorName": "Kevin Huria",
+    "Tquantity": "5",
+    "TProductId": "1",
+    "TproductName" : "2024-02-20",
+    "TBuyPrice" : "60",
+    "BuytransactionDate" : "2024-05-16T05:50:06"
+    
+}
+
+###
+
+
+###
+DELETE http://localhost:5275/buytransactions/1

@@ -11,7 +11,9 @@ var app = builder.Build();
 app.MapProductsEndpoints();
 app.MapCategoriesEndpoints();
 app.MapVendorsEndpoints();
-app.MapCustomersEndpoints();    
+app.MapCustomersEndpoints(); 
+app.MapBuyTransactionEndpoints();
+ 
 
 
 
