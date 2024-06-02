@@ -19,6 +19,7 @@ public class SokoContext(DbContextOptions<SokoContext> options)
 
     public DbSet<SellTransaction> SellTransactions => Set<SellTransaction>();
 
+    public DbSet<POSBuy> POSBuy => Set<POSBuy>();
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
