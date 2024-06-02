@@ -11,11 +11,26 @@ public static class BuyTransactionMapping
         {
             BTId = buytransaction.BTId,
             TVendorName = buytransaction.TVendorName,
-            TQuantity = buytransaction.TQuantity,
+            BTQuantity = buytransaction.BTQuantity,
             TProductId = buytransaction.TProductId,
             TProductName = buytransaction.TProductName,
             TBuyPrice = buytransaction.TBuyPrice,
             BuyTransactionDate = buytransaction.BuyTransactionDate
+        };
+    }
+
+    public static BuyTransaction ToEntity(this UpdateBuyTransactionDto buytransaction, int BTId)
+    {
+        return new BuyTransaction()
+        {
+           BTId = buytransaction.BTId,
+            TVendorName = buytransaction.TVendorName,
+            BTQuantity = buytransaction.BTQuantity,
+            TProductId = buytransaction.TProductId,
+            TProductName = buytransaction.TProductName,
+            TBuyPrice = buytransaction.TBuyPrice,
+            BuyTransactionDate = buytransaction.BuyTransactionDate
+            
         };
     }
 
@@ -26,7 +41,7 @@ public static class BuyTransactionMapping
 
                 buytransaction.BTId,
                 buytransaction.TVendorName,
-                buytransaction.TQuantity,
+                buytransaction.BTQuantity,
                 buytransaction.TProductId,
                 buytransaction.TProductName,
                 buytransaction.TBuyPrice,

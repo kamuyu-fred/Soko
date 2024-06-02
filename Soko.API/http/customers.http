@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:5275/customers/2
+PUT http://localhost:5275/customers/1
 Content-Type: application/json
 
 {

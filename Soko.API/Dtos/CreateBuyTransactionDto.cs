@@ -1,11 +1,14 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Soko.API.Dtos;
 
 public record class CreateBuyTransactionDto(
 
   
     int BTId,
+    [Required][StringLength(50)]
     string TVendorName,
-    int TQuantity,
+    int BTQuantity,
     int TProductId,
     string TProductName,
     decimal TBuyPrice,

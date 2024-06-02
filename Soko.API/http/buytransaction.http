@@ -9,11 +9,11 @@ Content-Type: application/json
 
 {
     "TVendorName": "Kevin Huria",
-    "Tquantity": "5",
+    "BTquantity": "5",
     "TProductId": "1",
-    "TproductName" : "2024-02-20",
+    "TproductName" : "Yellow Mangoes",
     "TBuyPrice" : "60",
-    "BuytransactionDate" : "2024-05-16T05:50:06"
+    "BuyTransactionDate" : "2024-05-16T05:50:06"
     
 }
 

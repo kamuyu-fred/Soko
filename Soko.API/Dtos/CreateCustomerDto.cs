@@ -9,3 +9,4 @@ public record class CreateCustomerDto(
     [Required][StringLength(20)] string CustomerLocation,
     DateOnly CustomerAddedDate
 );
+

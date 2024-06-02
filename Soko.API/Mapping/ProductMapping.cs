@@ -28,7 +28,7 @@ public static class ProductMapping
             CategoryId = product.CategoryId,
             BuyPrice = product.BuyPrice,
             SellPrice = product.SellPrice,
-            AddedDate = product.AddedDate,
+            AddedDate = product.AddedDate
             
         };
     }    

@@ -1,5 +1,4 @@
 
-
 using Soko.API.Data;
 using Soko.API.Dtos;
 using Soko.API.Entities;
@@ -23,6 +22,7 @@ public static class BuyTransactionsEndpoints
         // GET /buytransactions
         group.MapGet("/", async (SokoContext dbContext) => 
             await dbContext.BuyTransactions
+                     
                      
                      .Select(buytransaction => buytransaction.ToBuyTransactionDto())
                      .AsNoTracking()
@@ -50,6 +50,25 @@ public static class BuyTransactionsEndpoints
                 GetBuyTransactionEndpointName, 
                 new { BTId = buytransaction.BTId }, 
                 buytransaction.ToBuyTransactionDto());
+        });
+
+         // PUT /products
+        group.MapPut("/{BTId}", async (int BTId, UpdateBuyTransactionDto updatedBuyTransaction, SokoContext dbContext) =>
+        {
+            var existingBuyTransaction = await dbContext.BuyTransactions.FindAsync(BTId);
+
+            if (existingBuyTransaction is null)
+            {
+                return Results.NotFound();
+            }
+
+            dbContext.Entry(existingBuyTransaction)
+                     .CurrentValues
+                     .SetValues(updatedBuyTransaction.ToEntity(BTId));
+
+            await dbContext.SaveChangesAsync();
+
+            return Results.NoContent();
         });
         
         

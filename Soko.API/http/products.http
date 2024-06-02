@@ -8,16 +8,16 @@ POST http://localhost:5275/products
 Content-Type: application/json
 
 {
-    "ProductName": "Final Fantasy XIV",
-    "quantity": 2,
-    "CategoryID": 4,
+    "ProductName": "Yellow Mangoes",
+    "quantity": 3,
+    "CategoryID": 2,
     "BuyPrice": 50.00,
     "SellPrice": 60.00,
     "AddedDate": "2024-02-20"
 }
 
 ###
-PUT http://localhost:5275/products/1
+PUT http://localhost:5275/products/2
 Content-Type: application/json
 
 {

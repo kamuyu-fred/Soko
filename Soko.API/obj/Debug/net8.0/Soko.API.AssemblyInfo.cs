@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Soko.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86495a202653849fa0a1c0fd5008861c46b9be09")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a87c3734289414b9ba323b27d625a8ab21a4f88")]
 [assembly: System.Reflection.AssemblyProductAttribute("Soko.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Soko.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

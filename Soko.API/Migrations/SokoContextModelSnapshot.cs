@@ -7,7 +7,7 @@ using Soko.API.Data;
 
 #nullable disable
 
-namespace Soko.API.Data.Migrations
+namespace Soko.API.Migrations
 {
     [DbContext(typeof(SokoContext))]
     partial class SokoContextModelSnapshot : ModelSnapshot
@@ -23,6 +23,9 @@ namespace Soko.API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("BTQuantity")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("BuyTransactionDate")
                         .HasColumnType("TEXT");
 
@@ -35,9 +38,6 @@ namespace Soko.API.Data.Migrations
                     b.Property<string>("TProductName")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("TQuantity")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("TVendorName")
                         .IsRequired()
@@ -154,10 +154,14 @@ namespace Soko.API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("CategoryId")
+                    b.Property<int>("STQuantity")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("SellTransactionDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TCustomerName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("TProductId")
@@ -167,15 +171,10 @@ namespace Soko.API.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("TQuantity")
-                        .HasColumnType("INTEGER");
-
                     b.Property<decimal>("TSellPrice")
                         .HasColumnType("TEXT");
 
                     b.HasKey("STId");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("SellTransactions");
                 });
@@ -213,15 +212,6 @@ namespace Soko.API.Data.Migrations
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("Soko.API.Entities.SellTransaction", b =>
-                {
-                    b.HasOne("Soko.API.Entities.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
                 });

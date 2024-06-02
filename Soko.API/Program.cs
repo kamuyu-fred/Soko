@@ -13,6 +13,7 @@ app.MapCategoriesEndpoints();
 app.MapVendorsEndpoints();
 app.MapCustomersEndpoints(); 
 app.MapBuyTransactionEndpoints();
+app.MapSellTransactionEndpoints();
  
 
 

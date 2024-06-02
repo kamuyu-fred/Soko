@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace Soko.API.Data.Migrations
+namespace Soko.API.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -20,7 +20,7 @@ namespace Soko.API.Data.Migrations
                     BTId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     TVendorName = table.Column<string>(type: "TEXT", nullable: false),
-                    TQuantity = table.Column<int>(type: "INTEGER", nullable: false),
+                    BTQuantity = table.Column<int>(type: "INTEGER", nullable: false),
                     TProductId = table.Column<int>(type: "INTEGER", nullable: false),
                     TProductName = table.Column<string>(type: "TEXT", nullable: false),
                     TBuyPrice = table.Column<decimal>(type: "TEXT", nullable: false),
@@ -58,6 +58,24 @@ namespace Soko.API.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Customers", x => x.CustomerId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SellTransactions",
+                columns: table => new
+                {
+                    STId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    TCustomerName = table.Column<string>(type: "TEXT", nullable: false),
+                    STQuantity = table.Column<int>(type: "INTEGER", nullable: false),
+                    TProductId = table.Column<int>(type: "INTEGER", nullable: false),
+                    TProductName = table.Column<string>(type: "TEXT", nullable: false),
+                    TSellPrice = table.Column<decimal>(type: "TEXT", nullable: false),
+                    SellTransactionDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SellTransactions", x => x.STId);
                 });
 
             migrationBuilder.CreateTable(
@@ -100,29 +118,6 @@ namespace Soko.API.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "SellTransactions",
-                columns: table => new
-                {
-                    STId = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    TProductId = table.Column<int>(type: "INTEGER", nullable: false),
-                    TQuantity = table.Column<int>(type: "INTEGER", nullable: false),
-                    TProductName = table.Column<string>(type: "TEXT", nullable: false),
-                    CategoryId = table.Column<int>(type: "INTEGER", nullable: true),
-                    TSellPrice = table.Column<decimal>(type: "TEXT", nullable: false),
-                    SellTransactionDate = table.Column<DateTime>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SellTransactions", x => x.STId);
-                    table.ForeignKey(
-                        name: "FK_SellTransactions_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "CategoryId");
-                });
-
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "CategoryId", "CategoryName" },
@@ -138,11 +133,6 @@ namespace Soko.API.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",
                 table: "Products",
-                column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SellTransactions_CategoryId",
-                table: "SellTransactions",
                 column: "CategoryId");
         }
 
