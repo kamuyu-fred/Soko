@@ -11,7 +11,7 @@ using Soko.API.Data;
 namespace Soko.API.Migrations
 {
     [DbContext(typeof(SokoContext))]
-    [Migration("20240531074959_InitialCreate")]
+    [Migration("20240602080035_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -117,6 +117,68 @@ namespace Soko.API.Migrations
                     b.HasKey("CustomerId");
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("Soko.API.Entities.POSBuy", b =>
+                {
+                    b.Property<int>("PBTId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PBTQuantity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("PBuyTransactionDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("PTBuyPrice")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("PTProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("PTProductName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PTVendorName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PBTId");
+
+                    b.ToTable("POSBuy");
+                });
+
+            modelBuilder.Entity("Soko.API.Entities.POSSell", b =>
+                {
+                    b.Property<int>("PSTId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PSTQuantity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("PSellTransactionDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PTCustomerName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("PTProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("PTProductName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("PTSellPrice")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PSTId");
+
+                    b.ToTable("POSSell");
                 });
 
             modelBuilder.Entity("Soko.API.Entities.Product", b =>

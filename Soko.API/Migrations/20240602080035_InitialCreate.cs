@@ -61,6 +61,42 @@ namespace Soko.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "POSBuy",
+                columns: table => new
+                {
+                    PBTId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    PTVendorName = table.Column<string>(type: "TEXT", nullable: false),
+                    PBTQuantity = table.Column<int>(type: "INTEGER", nullable: false),
+                    PTProductId = table.Column<int>(type: "INTEGER", nullable: false),
+                    PTProductName = table.Column<string>(type: "TEXT", nullable: false),
+                    PTBuyPrice = table.Column<decimal>(type: "TEXT", nullable: false),
+                    PBuyTransactionDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_POSBuy", x => x.PBTId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "POSSell",
+                columns: table => new
+                {
+                    PSTId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    PTCustomerName = table.Column<string>(type: "TEXT", nullable: false),
+                    PSTQuantity = table.Column<int>(type: "INTEGER", nullable: false),
+                    PTProductId = table.Column<int>(type: "INTEGER", nullable: false),
+                    PTProductName = table.Column<string>(type: "TEXT", nullable: false),
+                    PTSellPrice = table.Column<decimal>(type: "TEXT", nullable: false),
+                    PSellTransactionDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_POSSell", x => x.PSTId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "SellTransactions",
                 columns: table => new
                 {
@@ -144,6 +180,12 @@ namespace Soko.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Customers");
+
+            migrationBuilder.DropTable(
+                name: "POSBuy");
+
+            migrationBuilder.DropTable(
+                name: "POSSell");
 
             migrationBuilder.DropTable(
                 name: "Products");

@@ -14,6 +14,9 @@ app.MapVendorsEndpoints();
 app.MapCustomersEndpoints(); 
 app.MapBuyTransactionEndpoints();
 app.MapSellTransactionEndpoints();
+app.MapPOSBuyEndpoints();
+app.MapPOSSellEndpoints();
+
  
 
 
